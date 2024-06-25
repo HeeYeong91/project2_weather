@@ -21,6 +21,12 @@ public class DiaryController {
         this.diaryService = diaryService;
     }
 
+    /**
+     * 일기 생성
+     * 
+     * @param date 작성일
+     * @param text 일기 내용
+     */
     @PostMapping("/create/diary")
     void createDiary(
             @RequestParam
@@ -32,6 +38,12 @@ public class DiaryController {
         diaryService.createDiary(date, text);
     }
 
+    /**
+     * 일기 조회
+     * 
+     * @param date 작성일
+     * @return 일기 리스트
+     */
     @GetMapping("/read/diary")
     List<Diary> readDiary(
             @RequestParam
@@ -41,6 +53,13 @@ public class DiaryController {
         return diaryService.readDiary(date);
     }
 
+    /**
+     * 일정기간 일기 조회
+     * 
+     * @param startDate 시작일
+     * @param endDate 종료일
+     * @return 일기 리스트
+     */
     @GetMapping("/read/diaries")
     List<Diary> readDiaries(
             @RequestParam
@@ -51,5 +70,22 @@ public class DiaryController {
             LocalDate endDate
     ) {
         return diaryService.readDiarys(startDate, endDate);
+    }
+
+    /**
+     * 일기 수정
+     * 
+     * @param date 작성일
+     * @param text 수정 내용
+     */
+    @PutMapping("/update/diary")
+    void updateDiary(
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate date,
+            @RequestBody
+            String text
+    ) {
+        diaryService.updateDiary(date, text);
     }
 }

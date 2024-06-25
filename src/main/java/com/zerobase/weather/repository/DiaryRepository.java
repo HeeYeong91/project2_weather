@@ -30,4 +30,12 @@ public interface DiaryRepository extends JpaRepository<Diary, Integer> {
      * @return 일기 리스트
      */
     List<Diary> findAllByDateBetween(LocalDate startDate, LocalDate endDate);
+
+    /**
+     * 일기 수정
+     * 
+     * @param date 수정할 일기 작성일
+     * @return 수정된 일기
+     */
+    Diary getFirstByDate(LocalDate date);
 }
