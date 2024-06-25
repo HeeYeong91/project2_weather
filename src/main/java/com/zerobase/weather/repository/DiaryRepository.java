@@ -1,6 +1,7 @@
 package com.zerobase.weather.repository;
 
 import com.zerobase.weather.domain.Diary;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -38,4 +39,12 @@ public interface DiaryRepository extends JpaRepository<Diary, Integer> {
      * @return 수정된 일기
      */
     Diary getFirstByDate(LocalDate date);
+
+    /**
+     * 일기 삭제
+     * 
+     * @param date 작성일
+     */
+    @Transactional
+    void deleteAllByDate(LocalDate date);
 }

@@ -91,6 +91,16 @@ public class DiaryService {
         diaryRepository.save(nowDiary);
     }
 
+
+    /**
+     * 일기 삭제
+     * 
+     * @param date 일기 작성일
+     */
+    public void deleteDiary(LocalDate date) {
+        diaryRepository.deleteAllByDate(date);
+    }
+
     private String getWeatherString() {
         String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=" + apiKey;
 
@@ -143,4 +153,5 @@ public class DiaryService {
 
         return resultMap;
     }
+
 }
