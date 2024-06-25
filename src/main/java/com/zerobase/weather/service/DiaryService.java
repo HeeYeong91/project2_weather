@@ -15,6 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -55,6 +56,27 @@ public class DiaryService {
         nowDiary.setDate(date);
 
         diaryRepository.save(nowDiary);
+    }
+
+    /**
+     * 일기 조회
+     *
+     * @param date 날짜
+     * @return 일기 리스트
+     */
+    public List<Diary> readDiary(LocalDate date) {
+        return diaryRepository.findAllByDate(date);
+    }
+
+    /**
+     * 일정 기간 일기 조회
+     *
+     * @param startDate 시작일
+     * @param endDate 종료일
+     * @return 일기 리스트
+     */
+    public List<Diary> readDiarys(LocalDate startDate, LocalDate endDate) {
+        return diaryRepository.findAllByDateBetween(startDate, endDate);
     }
 
     private String getWeatherString() {

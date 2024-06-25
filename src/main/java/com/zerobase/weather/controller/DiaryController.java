@@ -1,13 +1,12 @@
 package com.zerobase.weather.controller;
 
+import com.zerobase.weather.domain.Diary;
 import com.zerobase.weather.service.DiaryService;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * 일기 컨트롤러
@@ -31,5 +30,26 @@ public class DiaryController {
             String text
     ) {
         diaryService.createDiary(date, text);
+    }
+
+    @GetMapping("/read/diary")
+    List<Diary> readDiary(
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate date
+    ) {
+        return diaryService.readDiary(date);
+    }
+
+    @GetMapping("/read/diaries")
+    List<Diary> readDiaries(
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate startDate,
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate endDate
+    ) {
+        return diaryService.readDiarys(startDate, endDate);
     }
 }
