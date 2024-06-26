@@ -78,7 +78,7 @@ class DiaryControllerTest {
         //when
         diaryService.createDiary(startDate, text);
         diaryService.createDiary(endDate, text);
-        List<Diary> list = diaryService.readDiarys(startDate, endDate);
+        List<Diary> list = diaryService.readDiaries(startDate, endDate);
 
         //then
         assertEquals(2, list.size());

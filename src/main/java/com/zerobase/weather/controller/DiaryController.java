@@ -69,7 +69,7 @@ public class DiaryController {
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
             LocalDate endDate
     ) {
-        return diaryService.readDiarys(startDate, endDate);
+        return diaryService.readDiaries(startDate, endDate);
     }
 
     /**
