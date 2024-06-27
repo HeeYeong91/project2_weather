@@ -44,17 +44,17 @@ OpenWeatherMap Api를 이용해 날씨 데이터를 가져와서 <br />
 ![api명세](https://github.com/HeeYeong91/project2_weather/assets/139057065/62773b8c-af60-4bd2-9a29-7d39dee37f0b) <br />
 
 ## 1. 일기 생성 API
+Spring Scheduler를 이용해 매일 새벽 1시 Open Api를 통해 날씨 데이터를 가져와 DB에 저장 <br />
+DB에서 현재 날짜의 날씨 정보를 가져와서 사용자가 입력한 일기 내용으로 일기 생성 <br />
 ![일기생성api](https://github.com/HeeYeong91/project2_weather/assets/139057065/8e9857b6-2a09-44a0-b63a-53b20ec8b262) <br />
 ![일기생성](https://github.com/HeeYeong91/project2_weather/assets/139057065/d374cdae-4fb6-45dc-a1a8-81e876925c62) <br />
-Spring Scheduler를 이용해 매일 새벽 1시 Open Api를 통해 날씨 데이터를 가져와 DB에 저장
-DB에서 현재 날짜의 날씨 정보를 가져와서 사용자가 입력한 일기 내용으로 일기 생성
 <br />
 
 ## 2. 일기 조회 API
-![일기조회api](https://github.com/HeeYeong91/project2_weather/assets/139057065/8d5fa070-7ca5-4b74-8099-b3e0196476b2) <br />
-![일기조회](https://github.com/HeeYeong91/project2_weather/assets/139057065/2a95e3b0-644e-4b71-bc74-fb8456c34012) <br />
 :exclamation: 정책 : <br />
 너무 먼 날짜를 조회할 경우 - 조회 실패 ("너무 과거 혹은 미래의 날짜입니다.")<br />
+![일기조회api](https://github.com/HeeYeong91/project2_weather/assets/139057065/8d5fa070-7ca5-4b74-8099-b3e0196476b2) <br />
+![일기조회](https://github.com/HeeYeong91/project2_weather/assets/139057065/2a95e3b0-644e-4b71-bc74-fb8456c34012) <br />
 <br />
 
 ## 3. 일정기간 일기 조회 API
