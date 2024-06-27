@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 /**
- * 날씨 도메인
+ * 날씨 엔티티
  * @author 이희영
  */
 @Getter

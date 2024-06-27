@@ -11,7 +11,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 /**
- * 일기 도메인
+ * 일기 엔티티
  * @author 이희영
  */
 @Getter
