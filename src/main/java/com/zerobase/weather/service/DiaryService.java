@@ -3,6 +3,7 @@ package com.zerobase.weather.service;
 import com.zerobase.weather.WeatherApplication;
 import com.zerobase.weather.domain.DateWeather;
 import com.zerobase.weather.domain.Diary;
+import com.zerobase.weather.error.InvalidDate;
 import com.zerobase.weather.repository.DateWeatherRepository;
 import com.zerobase.weather.repository.DiaryRepository;
 import org.json.simple.JSONArray;
@@ -88,6 +89,11 @@ public class DiaryService {
     @Transactional(readOnly = true)
     public List<Diary> readDiary(LocalDate date) {
         logger.debug("read diary");
+
+        if (date.isAfter(LocalDate.ofYearDay(3050, 1))) {
+            throw new InvalidDate();
+        }
+
         return diaryRepository.findAllByDate(date);
     }
 
