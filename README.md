@@ -40,6 +40,12 @@ OpenWeatherMap Api를 이용해 날씨 데이터를 가져와서 <br />
 프로젝트 엔티티 구조
 ![다이어크램](https://github.com/HeeYeong91/project2_weather/assets/139057065/1444b052-3fc3-4b08-98cf-636eb35a1a3f) <br />
 
+application.properties 파일 추가 <br />
+resources 폴더 밑에 application.properties 파일 추가 <br />
+![properties](https://github.com/HeeYeong91/project2_weather/assets/139057065/bbcd318e-310e-46f3-946e-3114111cfe58) <br />
+mysql 계정 정보 username, password 값 추가 <br />
+Open Api key 값 추가 <br />
+
 ## :pushpin: 2. 프로젝트 기능 및 Api 명세
 ![api명세](https://github.com/HeeYeong91/project2_weather/assets/139057065/62773b8c-af60-4bd2-9a29-7d39dee37f0b) <br />
 
